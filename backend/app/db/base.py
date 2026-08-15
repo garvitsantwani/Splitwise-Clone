@@ -5,4 +5,14 @@ from sqlalchemy.orm import DeclarativeBase
 class Base(DeclarativeBase):
     pass
 
-# creates the common parent for all our database models.
+
+
+#   We made base.py because SQLAlchemy needs a common foundation for all our database model
+# We're going to have many database tables:
+
+# User       → users table
+# Group      → groups table
+# Expense     → expenses table
+# Settlement  → settlements table
+
+# Common parent for all database models.
