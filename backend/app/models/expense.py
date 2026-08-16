@@ -31,3 +31,4 @@ class Expense(Base):
     )
     group = relationship("Group", back_populates="expenses")
     payer = relationship("User", back_populates="expenses")
+    splits = relationship("ExpenseSplit", back_populates="expense")
