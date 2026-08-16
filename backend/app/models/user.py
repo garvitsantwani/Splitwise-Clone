@@ -21,6 +21,7 @@ class User(Base):
     name: Mapped[str] = mapped_column(String(100))
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True)
     group_members = relationship("GroupMember", back_populates="user")
+    expenses = relationship("Expense", back_populates="payer")
 
 # It tells SQLAlchemy:
 # "A User can have multiple GroupMember records."

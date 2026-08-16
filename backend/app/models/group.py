@@ -16,3 +16,4 @@ class Group(Base):
         default=datetime.utcnow
     )       
     members = relationship("GroupMember", back_populates="group")
+    expenses = relationship("Expense", back_populates="group")
