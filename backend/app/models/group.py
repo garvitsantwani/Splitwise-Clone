@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from sqlalchemy import String, DateTime
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column,relationship
 
 from app.db.base import Base
 
@@ -15,3 +15,4 @@ class Group(Base):
         DateTime,
         default=datetime.utcnow
     )       
+    members = relationship("GroupMember", back_populates="group")
